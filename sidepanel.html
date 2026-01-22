@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小红书选题分析助手</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="lib/marked.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header-title">小红书选题分析助手</h1>
+      <p class="header-subtitle">Deepseek · AI 分析</p>
+    </header>
+    
+    <!-- 操作区 -->
+    <div class="action-section">
+      <button id="extractBtn" class="btn btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        提取主题
+      </button>
+      <button id="analyzeBtn" class="btn btn-secondary" disabled>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+        分析选题
+      </button>
+      <button id="reanalyzeBtn" class="btn btn-tertiary" disabled>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        重新分析
+      </button>
+    </div>
+    
+    <!-- 提示信息 -->
+    <div id="tipMessage" class="tip-message"></div>
+    
+    <!-- 状态指示器 -->
+    <div id="statusIndicator" class="status-indicator">
+      <div id="statusTitle" class="status-item">
+        <span class="status-icon status-pending"></span>
+        <span class="status-text">待提取标题</span>
+      </div>
+      <div id="statusDesc" class="status-item">
+        <span class="status-icon status-pending"></span>
+        <span class="status-text">待提取正文</span>
+      </div>
+    </div>
+    
+    <!-- 提取内容预览 -->
+    <div id="extractedContent" class="extracted-content"></div>
+    
+    <!-- 思考状态 -->
+    <div id="thinkingStatus" class="thinking-status">
+      <div class="thinking-spinner"></div>
+      <span>正在分析中…</span>
+    </div>
+    
+    <!-- 分析结果 -->
+    <div class="result-section">
+      <div id="resultHeader" class="result-header">
+        <svg class="result-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>分析结果</span>
+      </div>
+      <div id="analysisResult" class="analysis-result"></div>
+    </div>
+  </div>
+  
+  <script src="sidepanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 20px;
+  max-width: 100%;
+}
+
+/* Header */
+.header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  color: #8c8c8c;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* 操作区 */
+.action-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5b7fff 0%, #7c6aff 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(91, 127, 255, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(91, 127, 255, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f5f5f5;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.btn-tertiary {
+  background: #ffffff;
+  color: #4b5563;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.btn:disabled {
+  background: #f0f0f0;
+  color: #bfbfbf;
+  cursor: not-allowed;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.btn:disabled .btn-icon {
+  opacity: 0.5;
+}
+
+/* 提示信息 */
+.tip-message {
+  font-size: 13px;
+  color: #8c8c8c;
+  padding: 12px;
+  background: #fff8e6;
+  border-radius: 8px;
+  border-left: 3px solid #faad14;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.tip-message.show {
+  display: block;
+}
+
+/* 状态指示器 */
+.status-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #595959;
+}
+
+.status-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-pending {
+  background: #d9d9d9;
+}
+
+.status-done {
+  background: #52c41a;
+}
+
+/* 提取内容预览 */
+.extracted-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.extracted-content.show {
+  display: block;
+}
+
+.extracted-content .label {
+  font-size: 11px;
+  color: #8c8c8c;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.extracted-content .content {
+  font-size: 14px;
+  color: #1a1a1a;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.extracted-content .title-section {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 思考状态 */
+.thinking-status {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: #5b7fff;
+  font-size: 14px;
+}
+
+.thinking-status.show {
+  display: flex;
+}
+
+.thinking-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(91, 127, 255, 0.2);
+  border-top-color: #5b7fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 结果区域 */
+.result-section {
+  display: none;
+}
+
+.result-section.show {
+  display: block;
+}
+
+.result-header {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #595959;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.result-header.show {
+  display: flex;
+}
+
+.result-icon {
+  width: 14px;
+  height: 14px;
+  color: #faad14;
+}
+
+.analysis-result {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.analysis-result.show {
+  display: block;
+}
+
+/* Markdown 样式 */
+.analysis-result h1,
+.analysis-result h2,
+.analysis-result h3,
+.analysis-result h4,
+.analysis-result h5,
+.analysis-result h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.analysis-result h1 { font-size: 20px; }
+.analysis-result h2 { font-size: 18px; }
+.analysis-result h3 { font-size: 16px; }
+.analysis-result h4 { font-size: 15px; }
+.analysis-result h5 { font-size: 14px; }
+.analysis-result h6 { font-size: 13px; }
+
+.analysis-result p {
+  margin-bottom: 12px;
+}
+
+.analysis-result ul,
+.analysis-result ol {
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+.analysis-result li {
+  margin-bottom: 4px;
+}
+
+.analysis-result code {
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+}
+
+.analysis-result pre {
+  background-color: #f0f0f0;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
+.analysis-result pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.analysis-result blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 16px;
+  margin: 12px 0;
+  color: #666;
+}
+
+.analysis-result strong {
+  font-weight: 600;
+}
+
+.analysis-result em {
+  font-style: italic;
+}
+
+.analysis-result a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.analysis-result a:hover {
+  text-decoration: underline;
+}
+
+.analysis-result hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 16px 0;
+}
+
+.analysis-result table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.analysis-result th,
+.analysis-result td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.analysis-result th {
+  background-color: #f5f5f5;
+}
