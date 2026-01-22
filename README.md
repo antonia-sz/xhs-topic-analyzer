@@ -13,9 +13,10 @@
 
 ![插件截图1](image_preview/插件截图1.png)
 
-![插件截图2](image_preview/插件截图2.png)
-
-![插件截图3](image_preview/插件截图3.png)
+<p align="center">
+  <img src="image_preview/插件截图2.png" width="45%" />
+  <img src="image_preview/插件截图3.png" width="45%" />
+</p>
 
 ## 分析内容
 
