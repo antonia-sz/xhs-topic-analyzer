@@ -1,0 +1,22 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 可能包含敏感信息的配置文件
+config.local.js
+*.local.js
+secrets.js
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp

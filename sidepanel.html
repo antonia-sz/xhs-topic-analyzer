@@ -15,6 +15,24 @@
       <p class="header-subtitle">Deepseek · AI 分析</p>
     </header>
     
+    <!-- API Key 设置区 -->
+    <div class="settings-section">
+      <div class="setting-item">
+        <label for="apiKeyInput">DeepSeek API Key</label>
+        <div class="api-key-wrapper">
+          <input type="password" id="apiKeyInput" placeholder="请输入你的 API Key">
+          <button id="toggleApiKey" class="btn-icon-only" title="显示/隐藏">
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+          <button id="saveApiKeyBtn" class="btn btn-small">保存</button>
+        </div>
+        <p id="apiKeyStatus" class="api-key-status"></p>
+      </div>
+    </div>
+    
     <!-- 操作区 -->
     <div class="action-section">
       <button id="extractBtn" class="btn btn-primary">

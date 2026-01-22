@@ -6,7 +6,7 @@ let extractedData = {
 
 // API 配置
 const API_URL = 'https://api.deepseek.com/chat/completions';
-const API_KEY = 'sk-db43c3974b0a4a9ba1ac2276f7a2518d'; // 请在此处填入你的 DeepSeek API Key
+let API_KEY = ''; // 从 storage 读取，不要在代码中硬编码
 
 // DOM 元素
 const extractBtn = document.getElementById('extractBtn');
@@ -22,9 +22,72 @@ const statusDesc = document.getElementById('statusDesc');
 const resultSection = document.querySelector('.result-section');
 const resultHeader = document.getElementById('resultHeader');
 
-// 初始化：检查页面状态
-document.addEventListener('DOMContentLoaded', () => {
+// DOM 元素 - API Key 相关
+const apiKeyInput = document.getElementById('apiKeyInput');
+const saveApiKeyBtn = document.getElementById('saveApiKeyBtn');
+const toggleApiKey = document.getElementById('toggleApiKey');
+const apiKeyStatus = document.getElementById('apiKeyStatus');
+
+// 初始化：加载 API Key 并检查页面状态
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadApiKey();
   checkPageStatus();
+});
+
+// 加载 API Key
+async function loadApiKey() {
+  try {
+    const result = await chrome.storage.local.get(['deepseekApiKey']);
+    if (result.deepseekApiKey) {
+      API_KEY = result.deepseekApiKey;
+      apiKeyInput.value = '••••••••••••••••';
+      apiKeyStatus.textContent = '✓ 已配置';
+      apiKeyStatus.className = 'api-key-status success';
+    } else {
+      apiKeyStatus.textContent = '未配置 API Key';
+      apiKeyStatus.className = 'api-key-status warning';
+    }
+  } catch (error) {
+    console.error('加载 API Key 失败:', error);
+  }
+}
+
+// 保存 API Key
+saveApiKeyBtn.addEventListener('click', async () => {
+  const key = apiKeyInput.value.trim();
+  
+  // 如果是掩码，说明没有修改
+  if (key.includes('•')) {
+    return;
+  }
+  
+  if (!key) {
+    apiKeyStatus.textContent = '请输入 API Key';
+    apiKeyStatus.className = 'api-key-status warning';
+    return;
+  }
+  
+  try {
+    await chrome.storage.local.set({ deepseekApiKey: key });
+    API_KEY = key;
+    apiKeyInput.value = '••••••••••••••••';
+    apiKeyInput.type = 'password';
+    apiKeyStatus.textContent = '✓ 保存成功';
+    apiKeyStatus.className = 'api-key-status success';
+  } catch (error) {
+    console.error('保存 API Key 失败:', error);
+    apiKeyStatus.textContent = '保存失败';
+    apiKeyStatus.className = 'api-key-status error';
+  }
+});
+
+// 切换 API Key 显示/隐藏
+toggleApiKey.addEventListener('click', () => {
+  if (apiKeyInput.type === 'password') {
+    apiKeyInput.type = 'text';
+  } else {
+    apiKeyInput.type = 'password';
+  }
 });
 
 // 检查当前页面是否包含 detail-title 元素

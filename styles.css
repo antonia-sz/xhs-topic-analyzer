@@ -37,6 +37,107 @@ body {
   font-weight: 400;
 }
 
+/* 设置区域 */
+.settings-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.setting-item label {
+  display: block;
+  font-size: 12px;
+  color: #595959;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.api-key-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.api-key-wrapper input {
+  flex: 1;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.api-key-wrapper input:focus {
+  border-color: #5b7fff;
+}
+
+.api-key-wrapper input::placeholder {
+  color: #bfbfbf;
+}
+
+.btn-small {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  background: linear-gradient(135deg, #5b7fff 0%, #7c6aff 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-small:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(91, 127, 255, 0.3);
+}
+
+.btn-icon-only {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-icon-only:hover {
+  background: #e8e8e8;
+}
+
+.btn-icon-only svg {
+  width: 16px;
+  height: 16px;
+  color: #595959;
+}
+
+.api-key-status {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.api-key-status.success {
+  color: #52c41a;
+}
+
+.api-key-status.warning {
+  color: #faad14;
+}
+
+.api-key-status.error {
+  color: #f44336;
+}
+
 /* 操作区 */
 .action-section {
   display: flex;
