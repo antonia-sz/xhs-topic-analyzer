@@ -4,9 +4,9 @@ let extractedData = {
   desc: ''
 };
 
-// API 配置
-const API_URL = 'https://api.deepseek.com/chat/completions';
-const API_KEY = 'sk-92a6ef00de9d4c82b28292bb96e9c4fd';
+// API 配置（从 config.js 读取）
+const API_URL = CONFIG.API_URL;
+const API_KEY = CONFIG.API_KEY;
 
 // DOM 元素
 const extractBtn = document.getElementById('extractBtn');

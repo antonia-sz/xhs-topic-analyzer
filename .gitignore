@@ -10,6 +10,7 @@ desktop.ini
 *.swo
 
 # 可能包含敏感信息的配置文件
+config.js
 config.local.js
 *.local.js
 secrets.js

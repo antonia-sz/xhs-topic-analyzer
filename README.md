@@ -37,6 +37,30 @@
 - 寻找选题的优化方向
 - 发现同赛道的延展选题
 
+## 配置 API Key
+
+使用本插件前，需要先配置 DeepSeek API Key：
+
+### 1. 获取 API Key
+
+访问 [DeepSeek 开放平台](https://platform.deepseek.com/)，注册账号并创建 API Key
+
+### 2. 配置到插件
+
+1. 复制 `config.example.js` 文件并重命名为 `config.js`
+2. 打开 `config.js`，将 `your-api-key-here` 替换为你的 API Key：
+
+```javascript
+const CONFIG = {
+  API_URL: 'https://api.deepseek.com/chat/completions',
+  API_KEY: 'sk-xxxxxxxxxxxxxxxxxxxxxxxx'  // 填入你的真实 API Key
+};
+```
+
+3. 保存文件
+
+⚠️ **安全提示**：`config.js` 文件包含敏感信息，已被 `.gitignore` 忽略，不会被提交到 Git 仓库
+
 ## 安装步骤
 
 1. 打开 Chrome 浏览器，访问 `chrome://extensions/`
@@ -61,6 +85,8 @@ xhs-topic-analyzer/
 ├── sidepanel.html      # 侧边栏页面
 ├── sidepanel.js        # 侧边栏逻辑
 ├── styles.css          # 样式文件
+├── config.example.js   # API Key 配置模板（需复制为 config.js）
+├── config.js           # API Key 配置文件（不提交到 Git）
 ├── icons/              # 插件图标
 ├── lib/
 │   └── marked.min.js   # Markdown 解析库
