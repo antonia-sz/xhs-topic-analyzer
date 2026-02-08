@@ -20,6 +20,12 @@
   <img src="image_preview/插件截图3.png" width="45%" />
 </p>
 
+<p align="center">
+  <img src="image_preview/插件截图4.png" width="45%" />
+  <img src="image_preview/插件截图5.png" width="45%" />
+</p>
+
+![插件截图1](image_preview/插件截图6.png)
 ## 分析内容
 
 插件会调用 DeepSeek AI 对小红书笔记进行深度分析，输出以下内容：
