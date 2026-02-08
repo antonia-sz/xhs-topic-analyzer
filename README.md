@@ -13,19 +13,35 @@
 
 ## 效果展示
 
-![插件截图1](image_preview/插件截图1.png)
+### 整体预览
+
+> 在小红书笔记详情页打开侧边栏，一键提取内容并进行 AI 分析
 
 <p align="center">
-  <img src="image_preview/插件截图2.png" width="45%" />
-  <img src="image_preview/插件截图3.png" width="45%" />
+  <img src="image_preview/插件截图1.png" width="100%" />
 </p>
 
+### AI 分析结果
+
+> DeepSeek AI 从选题定位、亮点短板、延展方向、风险提醒等维度给出专业分析
+
 <p align="center">
-  <img src="image_preview/插件截图4.png" width="45%" />
+  <img src="image_preview/插件截图2.png" width="32%" />
+  <img src="image_preview/插件截图3.png" width="32%" />
+  <img src="image_preview/插件截图4.png" width="32%" />
+</p>
+
+### 暂存区与导出
+
+> 将分析结果加入暂存区，批量勾选后一键导出为 Excel 文件
+
+<p align="center">
   <img src="image_preview/插件截图5.png" width="45%" />
 </p>
 
-![插件截图1](image_preview/插件截图6.png)
+<p align="center">
+  <img src="image_preview/插件截图6.png" width="100%" />
+</p>
 ## 分析内容
 
 插件会调用 DeepSeek AI 对小红书笔记进行深度分析，输出以下内容：
