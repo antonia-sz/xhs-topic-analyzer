@@ -26,16 +26,16 @@
 > DeepSeek AI 从选题定位、亮点短板、延展方向、风险提醒等维度给出专业分析
 
 <p align="center">
-  <img src="image_preview/插件截图2.png" width="32%" />
-  <img src="image_preview/插件截图3.png" width="32%" />
-  <img src="image_preview/插件截图4.png" width="32%" />
+  <img src="image_preview/插件截图2.png" width="45%" />
+  <img src="image_preview/插件截图3.png" width="45%" />
 </p>
 
 ### 暂存区与导出
 
-> 将分析结果加入暂存区，批量勾选后一键导出为 Excel 文件
+> 分析完成后加入暂存区，批量勾选后一键导出为 Excel 文件
 
 <p align="center">
+  <img src="image_preview/插件截图4.png" width="45%" />
   <img src="image_preview/插件截图5.png" width="45%" />
 </p>
 
